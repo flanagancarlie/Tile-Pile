@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.Tilemaps;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Board : MonoBehaviour
 {
@@ -9,6 +10,9 @@ public class Board : MonoBehaviour
     public TetrominoData[] tetrominos;
     public Vector3Int spawnPosition = new Vector3Int(-1, 8, 0);
     public Vector2Int boardSize = new Vector2Int(10, 20);
+
+    public int linesCleared;
+    public Text cleared;
 
     public RectInt Bounds
     {
@@ -31,6 +35,9 @@ public class Board : MonoBehaviour
 
     private void Start()
     {
+        this.cleared = GetComponentInChildren<Text>();
+        this.linesCleared = 0;
+        //updateText(this.cleared, this.linesCleared);
         SpawnPiece();
       
     }
@@ -57,13 +64,22 @@ public class Board : MonoBehaviour
 
     private void GameOver()
     {
+        linesCleared = 0;
         this.tilemap.ClearAllTiles();
+        
     }
 
 
     private void Update()
     {
+        //updateText(this.cleared, this.linesCleared);
+        print(linesCleared);
         CheckForQuit();
+    }
+
+    public void updateText(Text text, int value)
+    {
+        text.text = "Lines Cleared: ";
     }
 
     public void Set(Piece piece)
@@ -163,7 +179,7 @@ public class Board : MonoBehaviour
                 position = new Vector3Int(col, row, 0);
                 this.tilemap.SetTile(position, above);
             }
-
+            linesCleared++;
             row++;
         }
     }
