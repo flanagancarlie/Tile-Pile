@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.Tilemaps;
+using UnityEngine.SceneManagement;
 
 public class Board : MonoBehaviour
 {
@@ -160,5 +161,8 @@ public class Board : MonoBehaviour
             row++;
         }
     }
-
+    public void Quit()
+    {
+        SceneManager.LoadScene("Menu");
+    }
 }
