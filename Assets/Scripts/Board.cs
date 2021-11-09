@@ -60,6 +60,12 @@ public class Board : MonoBehaviour
         this.tilemap.ClearAllTiles();
     }
 
+
+    private void Update()
+    {
+        CheckForQuit();
+    }
+
     public void Set(Piece piece)
     {
         for (int i = 0; i < piece.cells.Length; i++)
@@ -161,6 +167,15 @@ public class Board : MonoBehaviour
             row++;
         }
     }
+
+    private void CheckForQuit()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Quit();
+        }
+    }
+
     public void Quit()
     {
         SceneManager.LoadScene("Menu");
