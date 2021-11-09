@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.Tilemaps;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;
+using TMPro;
 
 public class Board : MonoBehaviour
 {
@@ -12,7 +12,7 @@ public class Board : MonoBehaviour
     public Vector2Int boardSize = new Vector2Int(10, 20);
 
     public int linesCleared;
-    public Text cleared;
+    public TextMeshProUGUI cleared;
 
     public RectInt Bounds
     {
@@ -35,9 +35,7 @@ public class Board : MonoBehaviour
 
     private void Start()
     {
-        this.cleared = GetComponentInChildren<Text>();
         this.linesCleared = 0;
-        //updateText(this.cleared, this.linesCleared);
         SpawnPiece();
       
     }
@@ -72,15 +70,10 @@ public class Board : MonoBehaviour
 
     private void Update()
     {
-        //updateText(this.cleared, this.linesCleared);
-        print(linesCleared);
+        cleared.text = "Lines Cleared: " + linesCleared.ToString();
         CheckForQuit();
     }
 
-    public void updateText(Text text, int value)
-    {
-        text.text = "Lines Cleared: ";
-    }
 
     public void Set(Piece piece)
     {
@@ -179,9 +172,9 @@ public class Board : MonoBehaviour
                 position = new Vector3Int(col, row, 0);
                 this.tilemap.SetTile(position, above);
             }
-            linesCleared++;
             row++;
         }
+        linesCleared++;
     }
 
     private void CheckForQuit()
