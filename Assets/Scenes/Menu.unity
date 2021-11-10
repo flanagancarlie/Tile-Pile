@@ -2785,6 +2785,22 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Current Version: 0.0.1.0s1
 
+    Controls:
+
+    Left - Left arrow/A
+
+    Right:
+    Right arrow/A
+
+    Down: Down arrow/S
+
+    Hard drop: Space
+
+    Rotate clockwise:
+    E
+
+    Rotate counterclockwise: Q
+
 
     Change Log
 
@@ -3916,22 +3932,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Initial tetris code by Zigurous: https://zigurous.com/tutorials/tetris
-
-
-    Menu
-    background via Wallpaper Cave: https://wallpapercave.com/tetris-wallpaper
-
-
-    Start
-    menu based on tutorial by Brackeys: https://www.youtube.com/watch?v=zc8ac_qUXQY&ab_channel=Brackeys
-
-
-    Scrolling
-    credit and version menu based on tutorial by Brackeys: https://www.youtube.com/watch?v=MWOvwegLDl0
-
-
-'
+  m_text: "Game made by Carlie Flanagan, Luca Wol and Diana Binney \n\nInitial tetris
+    code by Zigurous: https://zigurous.com/tutorials/tetris\n\nMenu background via
+    Wallpaper Cave: https://wallpapercave.com/tetris-wallpaper\n\nStart menu based
+    on tutorial by Brackeys: https://www.youtube.com/watch?v=zc8ac_qUXQY&ab_channel=Brackeys\n\nScrolling
+    credit and version menu based on tutorial by Brackeys: https://www.youtube.com/watch?v=MWOvwegLDl0\n\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
