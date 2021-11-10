@@ -2790,7 +2790,8 @@ MonoBehaviour:
 
     0.0.1.0s1: Added background,
     main menu screen, credits screen, version notes screen, exit button, in-game
-    quit button, cleared line count'
+    quit button, cleared line count, high score sount that persists until game is
+    quit'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

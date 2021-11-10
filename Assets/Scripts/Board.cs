@@ -12,7 +12,9 @@ public class Board : MonoBehaviour
     public Vector2Int boardSize = new Vector2Int(10, 20);
 
     public int linesCleared;
+    public int highScore;
     public TextMeshProUGUI cleared;
+    public TextMeshProUGUI score;
 
     public RectInt Bounds
     {
@@ -36,6 +38,7 @@ public class Board : MonoBehaviour
     private void Start()
     {
         this.linesCleared = 0;
+        this.highScore = 0;
         SpawnPiece();
       
     }
@@ -62,6 +65,10 @@ public class Board : MonoBehaviour
 
     private void GameOver()
     {
+        if (linesCleared >= highScore)
+        {
+            highScore = linesCleared;
+        }
         linesCleared = 0;
         this.tilemap.ClearAllTiles();
         
@@ -70,7 +77,8 @@ public class Board : MonoBehaviour
 
     private void Update()
     {
-        cleared.text = "Lines Cleared: " + linesCleared.ToString();
+        this.cleared.text = "Lines Cleared: " + linesCleared.ToString();
+        this.score.text = "High Score: " + highScore.ToString();
         CheckForQuit();
     }
 
@@ -175,6 +183,7 @@ public class Board : MonoBehaviour
             row++;
         }
         linesCleared++;
+
     }
 
     private void CheckForQuit()
