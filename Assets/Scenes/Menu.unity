@@ -2788,9 +2788,10 @@ MonoBehaviour:
 
     Change Log
 
-    0.0.1.0s1: Added background, main menu screen, credits screen, version notes screen,
-    exit button, in-game quit button, cleared line count, high score sount that persists
-    until game is quit'
+    0.0.1.0s1: Added background,
+    main menu screen, credits screen, version notes screen, exit button, in-game
+    quit button, cleared line count, high score sount that persists until game is
+    quit'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3918,7 +3919,16 @@ MonoBehaviour:
   m_text: 'Initial tetris code by Zigurous: https://zigurous.com/tutorials/tetris
 
 
-    Menu background via Wallpaper Cave: https://wallpapercave.com/tetris-wallpaper
+    Menu
+    background via Wallpaper Cave: https://wallpapercave.com/tetris-wallpaper
+
+
+    Start
+    menu based on tutorial by Brackeys: https://www.youtube.com/watch?v=zc8ac_qUXQY&ab_channel=Brackeys
+
+
+    Scrolling
+    credit and version menu based on tutorial by Brackeys: https://www.youtube.com/watch?v=MWOvwegLDl0
 
 
 '
