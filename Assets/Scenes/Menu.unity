@@ -2785,12 +2785,13 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Current Version: 0.0.1.0s1
 
+
     Controls:
 
     Left - Left arrow/A
 
     Right:
-    Right arrow/A
+    Right arrow/D
 
     Down: Down arrow/S
 
