@@ -13,6 +13,9 @@ public class Board : MonoBehaviour
 
     public int linesCleared;
     public TextMeshProUGUI cleared;
+    
+    public int points;
+    public TextMeshProUGUI score;
 
     public RectInt Bounds
     {
