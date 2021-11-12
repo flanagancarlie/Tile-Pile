@@ -10,7 +10,12 @@ public class MainMenu : MonoBehaviour
         SceneManager.LoadScene("Tetris");
     }
 
-        public void QuitGame()
+    public void PlayOriginal()
+    {
+        SceneManager.LoadScene("TetrisOriginal");
+    }
+
+    public void QuitGame()
     {
         Application.Quit();
     }
