@@ -423,7 +423,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1672081051}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: Board, Assembly-CSharp
         m_MethodName: Quit
         m_Mode: 1
@@ -834,8 +834,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1672081053}
   - component: {fileID: 1672081052}
-  - component: {fileID: 1672081051}
   - component: {fileID: 1672081054}
+  - component: {fileID: 1672081051}
   m_Layer: 0
   m_Name: Board
   m_TagString: Untagged
@@ -852,30 +852,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1672081050}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e677f95f82176984b8e3db52e0e2eb15, type: 3}
+  m_Script: {fileID: 11500000, guid: 5866f65b30d5f9e4aaa940daefa067d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tetrominos:
-  - tile: {fileID: 11400000, guid: bc6d492b04fbad14e9a5309461d3b373, type: 2}
-    tetromino: 0
-  - tile: {fileID: 11400000, guid: 0dc5b07d3f16a9144b7bd7f966e63579, type: 2}
-    tetromino: 1
-  - tile: {fileID: 11400000, guid: 201402122796466449faae7289ec2c3c, type: 2}
-    tetromino: 2
-  - tile: {fileID: 11400000, guid: 0284d3c79c555724e92cd12656c31fdf, type: 2}
-    tetromino: 3
-  - tile: {fileID: 11400000, guid: b13d975fdf88bd6418c1ef3a6a8d7a49, type: 2}
-    tetromino: 4
-  - tile: {fileID: 11400000, guid: 5dc454e7b24d6984c990b34a8a0df4f0, type: 2}
-    tetromino: 5
-  - tile: {fileID: 11400000, guid: d76f46e381eae2b45b03d8b9fde967ba, type: 2}
-    tetromino: 6
-  spawnPosition: {x: -1, y: 8, z: 0}
-  boardSize: {x: 10, y: 20}
-  linesCleared: 0
-  highScore: 0
-  cleared: {fileID: 0}
-  score: {fileID: 0}
+  stepDelay: 1
+  lockDelay: 0.5
 --- !u!156049354 &1672081052
 Grid:
   m_ObjectHideFlags: 0
@@ -912,11 +893,26 @@ MonoBehaviour:
   m_GameObject: {fileID: 1672081050}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ae9b249d6c4c09d4ea4a07f7c4d6db62, type: 3}
+  m_Script: {fileID: 11500000, guid: daf88a3c61257904a886e084a93132ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stepDelay: 1
-  lockDelay: 0.5
+  tetrominos:
+  - tile: {fileID: 11400000, guid: bc6d492b04fbad14e9a5309461d3b373, type: 2}
+    tetromino: 0
+  - tile: {fileID: 11400000, guid: 0dc5b07d3f16a9144b7bd7f966e63579, type: 2}
+    tetromino: 1
+  - tile: {fileID: 11400000, guid: 201402122796466449faae7289ec2c3c, type: 2}
+    tetromino: 2
+  - tile: {fileID: 11400000, guid: 0284d3c79c555724e92cd12656c31fdf, type: 2}
+    tetromino: 3
+  - tile: {fileID: 11400000, guid: b13d975fdf88bd6418c1ef3a6a8d7a49, type: 2}
+    tetromino: 4
+  - tile: {fileID: 11400000, guid: 5dc454e7b24d6984c990b34a8a0df4f0, type: 2}
+    tetromino: 5
+  - tile: {fileID: 11400000, guid: d76f46e381eae2b45b03d8b9fde967ba, type: 2}
+    tetromino: 6
+  spawnPosition: {x: -1, y: 8, z: 0}
+  boardSize: {x: 10, y: 20}
 --- !u!1 &1693609955
 GameObject:
   m_ObjectHideFlags: 0
@@ -1190,9 +1186,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 2005954962}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 43b826eb8a4c0354ab117177657d6d9f, type: 3}
+  m_Script: {fileID: 11500000, guid: 1d383909d91d62f43bc7db57a1b917b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   tile: {fileID: 11400000, guid: b5c8ba0194720374ea9f720ca1a13d43, type: 2}
-  board: {fileID: 1672081051}
-  trackingPiece: {fileID: 1672081054}
+  board: {fileID: 1672081054}
+  trackingPiece: {fileID: 1672081051}
