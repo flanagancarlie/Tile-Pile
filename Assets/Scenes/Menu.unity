@@ -1787,7 +1787,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &782935688
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2769,7 +2769,7 @@ MonoBehaviour:
       - m_Target: {fileID: 782935689}
         m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
         m_MethodName: SetFullscreen
-        m_Mode: 6
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -2935,7 +2935,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1412757375
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3586,7 +3586,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Current Version: 0.0.1.0s1
+  m_text: 'Current Version: 0.0.1.0s2
 
 
     Controls:
@@ -3608,10 +3608,13 @@ MonoBehaviour:
 
     Change Log
 
-    0.0.1.0s1: Added background,
-    main menu screen, credits screen, version notes screen, exit button, in-game
-    quit button, cleared line count, high score sount that persists until game is
-    quit'
+    0.0.1.0s2: Added volume
+    and full screen toggle to options screen
+
+
+    0.0.1.0s1: Added background, main
+    menu screen, credits screen, version notes screen, exit button, in-game quit
+    button, cleared line count, high score sount that persists until game is quit'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -4293,7 +4296,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -5023,7 +5026,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -5202,7 +5205,8 @@ MonoBehaviour:
     and TA Josiah Boucher\n\nInitial tetris code by Zigurous: https://zigurous.com/tutorials/tetris\n\nMenu
     background via Wallpaper Cave: https://wallpapercave.com/tetris-wallpaper\n\nStart
     menu based on tutorial by Brackeys: https://www.youtube.com/watch?v=zc8ac_qUXQY&ab_channel=Brackeys\n\nScrolling
-    credit and version menu based on tutorial by Brackeys: https://www.youtube.com/watch?v=MWOvwegLDl0\n\n"
+    credit and version menu based on tutorial by Brackeys: https://www.youtube.com/watch?v=MWOvwegLDl0\n\nOptions
+    screen based on tutorial by Brackeys: https://www.youtube.com/watch?v=YOaYQrN1oYQ\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
