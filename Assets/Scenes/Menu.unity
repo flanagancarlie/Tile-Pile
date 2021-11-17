@@ -3879,6 +3879,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   resolutionDropdown: {fileID: 1276945351}
+  fullScreenToggle: {fileID: 1205781724}
 --- !u!1 &1418005602
 GameObject:
   m_ObjectHideFlags: 0
@@ -4614,15 +4615,16 @@ MonoBehaviour:
 
     Change Log
 
-    0.0.1.0s2: Added volume
-    and full screen toggle to options screen, title screen and splash screen before
-    menu, background music and game sound effects for hard  drop, soft drop, line
-    clear, game over and game start.
+    0.0.1.0s2: Added volume,
+    resolution and full screen toggle to options screen, title screen and splash
+    screen before menu, background music and game sound effects for hard  drop, soft
+    drop, line clear, game over and game start.
 
 
-    0.0.1.0s1: Added background, main menu
-    screen, credits screen, version notes screen, exit button, in-game quit button,
-    cleared line count, high score sount that persists until game is quit'
+    0.0.1.0s1: Added background,
+    main menu screen, credits screen, version notes screen, exit button, in-game
+    quit button, cleared line count, high score sount that persists until game is
+    quit'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -6542,7 +6544,9 @@ MonoBehaviour:
     background via Wallpaper Cave: https://wallpapercave.com/tetris-wallpaper\n\nStart
     menu based on tutorial by Brackeys: https://www.youtube.com/watch?v=zc8ac_qUXQY&ab_channel=Brackeys\n\nScrolling
     credit and version menu based on tutorial by Brackeys: https://www.youtube.com/watch?v=MWOvwegLDl0\n\nOptions
-    screen based on tutorial by Brackeys: https://www.youtube.com/watch?v=YOaYQrN1oYQ\n"
+    screen based on tutorial by Brackeys: https://www.youtube.com/watch?v=YOaYQrN1oYQ\n\nAudio
+    made with assistance from tutorial by Brackeys: https://www.youtube.com/watch?v=6OT43pvUyfY\n\nAudio
+    files from: https://github.com/nickarora/tetris/tree/master/sounds"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

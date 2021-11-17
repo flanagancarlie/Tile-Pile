@@ -11,6 +11,8 @@ public class OptionsMenu : MonoBehaviour
 
     public Dropdown resolutionDropdown;
 
+    public Toggle fullScreenToggle;
+
     Resolution[] resolutions;
 
     public void Start()
@@ -19,6 +21,8 @@ public class OptionsMenu : MonoBehaviour
         resolutions = Screen.resolutions;
 
         resolutionDropdown.ClearOptions();
+
+
 
         List<string> options = new List<string>();
 
@@ -39,6 +43,8 @@ public class OptionsMenu : MonoBehaviour
         resolutionDropdown.AddOptions(options);
         resolutionDropdown.value = currentResolutionIndex;
         resolutionDropdown.RefreshShownValue();
+
+        fullScreenToggle.isOn = Screen.fullScreen;
     }
 
 
