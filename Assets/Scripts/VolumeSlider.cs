@@ -13,6 +13,7 @@ public class VolumeSlider : MonoBehaviour
     private void Update()
     {
         sliderValue = AudioManager.volume;
+        slider.value = sliderValue;
         displaySliderValue.text = ((int)((sliderValue) * 100)).ToString() + "%";
 
     }

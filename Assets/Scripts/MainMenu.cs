@@ -11,6 +11,7 @@ public class MainMenu : MonoBehaviour
     public AudioManager audioManager;
     public float volume;
     public Slider volumeSlider;
+
     public void Initialize(AudioManager audioManager, Slider volumeSlider)
     {
 
@@ -51,6 +52,13 @@ public class MainMenu : MonoBehaviour
     public void SetFullscreen (bool isFullscreen)
     {
         Screen.fullScreen = isFullscreen;
+    }
+
+    public void SetQuality(int quality)
+    {
+
+        QualitySettings.SetQualityLevel(quality);
+
     }
 
 
