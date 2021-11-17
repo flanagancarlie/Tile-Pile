@@ -7,7 +7,12 @@ using UnityEngine.Audio;
 public class MainMenu : MonoBehaviour
 {
 
-    public AudioMixer audioMixer;
+    public AudioManager audioManager;
+
+    public void Initialize(AudioManager audioManager)
+    {
+        this.audioManager = audioManager;
+    }
 
         public void PlayGame()
     {
@@ -28,7 +33,7 @@ public class MainMenu : MonoBehaviour
     public void SetVolume (float volume)
     {
         Debug.Log(volume);
-        audioMixer.SetFloat("volume", volume);
+        audioManager.setVolume(volume); 
     }
 
 

@@ -16,6 +16,25 @@ public class Board : MonoBehaviour
     public TextMeshProUGUI cleared;
     public TextMeshProUGUI score;
 
+    public AudioManager audioManager;
+
+    private float volume;
+
+
+
+    public void Initialize(AudioManager audioManager)
+    {
+        this.audioManager = audioManager;
+//        this.volume = AudioManager.volume;
+ //       this.audioManager.setVolume(volume);
+    }
+
+    public void SetVolume(float volume)
+    {
+        Debug.Log(volume);
+        audioManager.setVolume(volume);
+    }
+
     public RectInt Bounds
     {
         get
@@ -27,6 +46,7 @@ public class Board : MonoBehaviour
 
     private void Awake()
     {
+        FindObjectOfType<AudioManager>().Play("start");
         this.tilemap = GetComponentInChildren<Tilemap>();
         this.activePiece = GetComponentInChildren<Piece>();
         for(int i = 0; i < this.tetrominos.Length; i++)
@@ -69,9 +89,12 @@ public class Board : MonoBehaviour
         {
             highScore = linesCleared;
         }
+        FindObjectOfType<AudioManager>().Play("gameover");
         linesCleared = 0;
         this.tilemap.ClearAllTiles();
-        
+
+
+
     }
 
 
@@ -89,6 +112,8 @@ public class Board : MonoBehaviour
         {
             Vector3Int tilePosition = piece.cells[i] + piece.position;
             this.tilemap.SetTile(tilePosition, piece.data.tile);
+           
+
         }
 
     }
@@ -134,6 +159,7 @@ public class Board : MonoBehaviour
         {
             if (IsLineFull(row))
             {
+                FindObjectOfType<AudioManager>().Play("lineremove");
                 LineClear(row);
             }
             else

@@ -84,6 +84,7 @@ public class Piece : MonoBehaviour
 
         if (this.lockTime >= this.lockDelay)
         {
+            FindObjectOfType<AudioManager>().Play("blockhit");
             Lock();
         }
     }
@@ -101,6 +102,8 @@ public class Piece : MonoBehaviour
         {
             continue;
         }
+        FindObjectOfType<AudioManager>().Play("harddrop");
+
         Lock();
     }
 
