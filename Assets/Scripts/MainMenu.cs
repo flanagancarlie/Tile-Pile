@@ -11,10 +11,11 @@ public class MainMenu : MonoBehaviour
     public AudioManager audioManager;
     public float volume;
     public Slider volumeSlider;
-    public void Initialize(AudioManager audioManager)
+    public void Initialize(AudioManager audioManager, Slider volumeSlider)
     {
+
         this.audioManager = audioManager;
-        this.volume = AudioManager.volume;
+        this.volumeSlider = volumeSlider;
         this.SetVolume(volume);
         this.volumeSlider.value = volume;
     }
@@ -40,6 +41,8 @@ public class MainMenu : MonoBehaviour
         Debug.Log(volume);
         audioManager.setVolume(volume);
         this.volume = volume;
+        volume = this.volumeSlider.value;
+
     }
 
 

@@ -26,6 +26,8 @@ public class Board : MonoBehaviour
         }
     }
 
+
+
     private void Awake()
     {
         FindObjectOfType<AudioManager>().Play("start");

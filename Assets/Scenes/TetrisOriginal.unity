@@ -423,8 +423,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Board, Assembly-CSharp
+      - m_Target: {fileID: 1672081054}
+        m_TargetAssemblyTypeName: BoardOriginal, Assembly-CSharp
         m_MethodName: Quit
         m_Mode: 1
         m_Arguments:

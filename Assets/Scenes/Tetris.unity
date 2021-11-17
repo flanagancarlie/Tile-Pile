@@ -318,12 +318,11 @@ MonoBehaviour:
     loop: 0
     source: {fileID: 0}
   - clip: {fileID: 8300000, guid: c2f7563fb128c7345b40d5722d8842e2, type: 3}
-    name: blockhit
+    name: softdrop
     volume: 0.3
     pitch: 1
     loop: 0
     source: {fileID: 0}
-  volume: 0
 --- !u!4 &81459272
 Transform:
   m_ObjectHideFlags: 0
