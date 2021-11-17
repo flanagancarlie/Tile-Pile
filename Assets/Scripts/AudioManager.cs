@@ -5,7 +5,7 @@ using UnityEngine;
 public class AudioManager : MonoBehaviour{
 
     public Sound[] sounds;
-    public float volume;
+    public static float volume;
 
     void Awake()
     {
@@ -27,11 +27,12 @@ public class AudioManager : MonoBehaviour{
 
             s.source.volume = volume;
         }
-        this.volume = volume;
+        AudioManager.volume = volume;
+        Debug.Log(AudioManager.volume);
     }
 
     void Start () {
-
+        this.setVolume(volume);
         Play("BackgroundMusic");
     }
 

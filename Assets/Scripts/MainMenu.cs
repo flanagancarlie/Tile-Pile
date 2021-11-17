@@ -3,16 +3,20 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Audio;
+using UnityEngine.UI;
 
 public class MainMenu : MonoBehaviour
 {
 
     public AudioManager audioManager;
     public float volume;
-    public void Initialize(AudioManager audioManager, float volume)
+    public Slider volumeSlider;
+    public void Initialize(AudioManager audioManager)
     {
         this.audioManager = audioManager;
+        this.volume = AudioManager.volume;
         this.SetVolume(volume);
+        this.volumeSlider.value = volume;
     }
 
         public void PlayGame()
@@ -37,6 +41,8 @@ public class MainMenu : MonoBehaviour
         audioManager.setVolume(volume);
         this.volume = volume;
     }
+
+
 
 
     public void SetFullscreen (bool isFullscreen)
