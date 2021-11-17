@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Audio;
-using UnityEngine.UI;
+using UnityEngine.UI; 
 
 public class MainMenu : MonoBehaviour
 {
@@ -11,6 +11,7 @@ public class MainMenu : MonoBehaviour
     public AudioManager audioManager;
     public float volume;
     public Slider volumeSlider;
+
 
     public void Initialize(AudioManager audioManager, Slider volumeSlider)
     {
@@ -21,7 +22,7 @@ public class MainMenu : MonoBehaviour
         this.volumeSlider.value = volume;
     }
 
-        public void PlayGame()
+    public void PlayGame()
     {
         SceneManager.LoadScene("Tetris");
     }
@@ -49,17 +50,7 @@ public class MainMenu : MonoBehaviour
 
 
 
-    public void SetFullscreen (bool isFullscreen)
-    {
-        Screen.fullScreen = isFullscreen;
-    }
 
-    public void SetQuality(int quality)
-    {
-
-        QualitySettings.SetQualityLevel(quality);
-
-    }
 
 
 }
