@@ -8,10 +8,11 @@ public class MainMenu : MonoBehaviour
 {
 
     public AudioManager audioManager;
-
-    public void Initialize(AudioManager audioManager)
+    public float volume;
+    public void Initialize(AudioManager audioManager, float volume)
     {
         this.audioManager = audioManager;
+        this.SetVolume(volume);
     }
 
         public void PlayGame()
@@ -33,7 +34,8 @@ public class MainMenu : MonoBehaviour
     public void SetVolume (float volume)
     {
         Debug.Log(volume);
-        audioManager.setVolume(volume); 
+        audioManager.setVolume(volume);
+        this.volume = volume;
     }
 
 

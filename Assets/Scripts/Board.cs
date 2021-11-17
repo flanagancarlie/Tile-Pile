@@ -16,24 +16,6 @@ public class Board : MonoBehaviour
     public TextMeshProUGUI cleared;
     public TextMeshProUGUI score;
 
-    public AudioManager audioManager;
-
-    private float volume;
-
-
-
-    public void Initialize(AudioManager audioManager)
-    {
-        this.audioManager = audioManager;
-//        this.volume = AudioManager.volume;
- //       this.audioManager.setVolume(volume);
-    }
-
-    public void SetVolume(float volume)
-    {
-        Debug.Log(volume);
-        audioManager.setVolume(volume);
-    }
 
     public RectInt Bounds
     {
@@ -49,7 +31,7 @@ public class Board : MonoBehaviour
         FindObjectOfType<AudioManager>().Play("start");
         this.tilemap = GetComponentInChildren<Tilemap>();
         this.activePiece = GetComponentInChildren<Piece>();
-        for(int i = 0; i < this.tetrominos.Length; i++)
+        for (int i = 0; i < this.tetrominos.Length; i++)
         {
             this.tetrominos[i].Initialize();
         }
@@ -60,7 +42,7 @@ public class Board : MonoBehaviour
         this.linesCleared = 0;
         this.highScore = 0;
         SpawnPiece();
-      
+
     }
 
     public void SpawnPiece()
@@ -69,8 +51,8 @@ public class Board : MonoBehaviour
         TetrominoData data = this.tetrominos[random];
 
         this.activePiece.Initialize(this, this.spawnPosition, data);
-        
-        if(IsValidPosition(this.activePiece, this.spawnPosition))
+
+        if (IsValidPosition(this.activePiece, this.spawnPosition))
         {
             Set(this.activePiece);
 
@@ -112,7 +94,7 @@ public class Board : MonoBehaviour
         {
             Vector3Int tilePosition = piece.cells[i] + piece.position;
             this.tilemap.SetTile(tilePosition, piece.data.tile);
-           
+
 
         }
 

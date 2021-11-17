@@ -1827,6 +1827,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioManager: {fileID: 1225125236}
+  volume: 0
 --- !u!1 &807878203
 GameObject:
   m_ObjectHideFlags: 0
@@ -2815,8 +2816,14 @@ MonoBehaviour:
     pitch: 1
     loop: 1
     source: {fileID: 0}
-  - clip: {fileID: 8300000, guid: c2f7563fb128c7345b40d5722d8842e2, type: 3}
-    name: blockhit
+  - clip: {fileID: 8300000, guid: 74161d07c66de0b44b24df7e7a94c159, type: 3}
+    name: harddrop
+    volume: 0.3
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - clip: {fileID: 8300000, guid: 067c70a7d17bbcf4b9d43a0a9b2032a3, type: 3}
+    name: lineremove
     volume: 0.3
     pitch: 1
     loop: 0
@@ -2827,20 +2834,20 @@ MonoBehaviour:
     pitch: 1
     loop: 0
     source: {fileID: 0}
-  - clip: {fileID: 8300000, guid: 74161d07c66de0b44b24df7e7a94c159, type: 3}
-    name: harddrop
-    volume: 0.3
-    pitch: 1
-    loop: 0
-    source: {fileID: 0}
   - clip: {fileID: 8300000, guid: b2552d7b20938c84883057955deadcac, type: 3}
     name: start
     volume: 0.3
     pitch: 1
     loop: 0
     source: {fileID: 0}
-  - clip: {fileID: 8300000, guid: 067c70a7d17bbcf4b9d43a0a9b2032a3, type: 3}
-    name: lineremove
+  - clip: {fileID: 8300000, guid: c2f7563fb128c7345b40d5722d8842e2, type: 3}
+    name: blockhit
+    volume: 0.3
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - clip: {fileID: 8300000, guid: b2552d7b20938c84883057955deadcac, type: 3}
+    name: start
     volume: 0.3
     pitch: 1
     loop: 0

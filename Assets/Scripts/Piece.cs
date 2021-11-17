@@ -68,7 +68,7 @@ public class Piece : MonoBehaviour
             HardDrop();
         }
 
-        if(Time.time >= this.stepTime)
+        if (Time.time >= this.stepTime)
         {
             Step();
         }
@@ -84,7 +84,7 @@ public class Piece : MonoBehaviour
 
         if (this.lockTime >= this.lockDelay)
         {
-            FindObjectOfType<AudioManager>().Play("blockhit");
+            FindObjectOfType<AudioManager>().Play("softdrop");
             Lock();
         }
     }
@@ -98,7 +98,7 @@ public class Piece : MonoBehaviour
 
     private void HardDrop()
     {
-        while(Move(Vector2Int.down))
+        while (Move(Vector2Int.down))
         {
             continue;
         }
@@ -115,7 +115,7 @@ public class Piece : MonoBehaviour
 
         bool valid = this.board.IsValidPosition(this, newPosition);
 
-        if(valid)
+        if (valid)
         {
             this.position = newPosition;
             this.lockTime = 0f;
@@ -137,7 +137,7 @@ public class Piece : MonoBehaviour
             this.rotationIndex = originalRotation;
             ApplyRotationMatrix(-direction);
         }
-    }  
+    }
 
     private void ApplyRotationMatrix(int direction)
     {

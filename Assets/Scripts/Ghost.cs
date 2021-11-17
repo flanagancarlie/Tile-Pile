@@ -52,11 +52,12 @@ public class Ghost : MonoBehaviour
 
         this.board.Clear(this.trackingPiece);
 
-        for (int row = current; row >= bottom; row --)
+        for (int row = current; row >= bottom; row--)
         {
             position.y = row;
 
-            if (this.board.IsValidPosition(this.trackingPiece, position)) {
+            if (this.board.IsValidPosition(this.trackingPiece, position))
+            {
                 this.position = position;
             }
             else
