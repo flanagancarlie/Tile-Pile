@@ -76,6 +76,8 @@ public class Board : MonoBehaviour
         FindObjectOfType<AudioManager>().Play("gameover");
         linesCleared = 0;
         this.tilemap.ClearAllTiles();
+        SceneManager.LoadScene("GameOver");
+
 
 
 
