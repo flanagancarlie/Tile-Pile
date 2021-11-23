@@ -153,23 +153,31 @@ public class Board : MonoBehaviour
         return true;
     }
 
-    public void ClearLines()
+    public int ClearLines()
     {
         RectInt bounds = this.Bounds;
         int row = bounds.yMin;
+        int lines = 0;
 
         while (row < bounds.yMax)
         {
             if (IsLineFull(row))
             {
-                FindObjectOfType<AudioManager>().Play("lineremove");
                 LineClear(row);
+                lines++;
+                if (lines == 4) {
+                                    FindObjectOfType<AudioManager>().Play("tetris-removal");
+                }
+                else {
+                                    FindObjectOfType<AudioManager>().Play("lineremove");
+                }
             }
             else
             {
                 row++;
             }
         }
+        return lines;
     }
 
     public bool IsLineFull(int row)

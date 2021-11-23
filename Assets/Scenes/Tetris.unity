@@ -456,6 +456,12 @@ MonoBehaviour:
     pitch: 1
     loop: 0
     source: {fileID: 0}
+  - clip: {fileID: 8300000, guid: 03136f36421bf404fb080992efbcb900, type: 3}
+    name: tetris-removal
+    volume: 0.3
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
 --- !u!4 &81459272
 Transform:
   m_ObjectHideFlags: 0

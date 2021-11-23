@@ -4570,8 +4570,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -87.5}
-  m_SizeDelta: {x: 0, y: 175}
+  m_AnchoredPosition: {x: 0, y: -250}
+  m_SizeDelta: {x: 0, y: 500}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1603379927
 MonoBehaviour:
@@ -4617,12 +4617,13 @@ MonoBehaviour:
 
 
     0.0.1.0s3: Added screen
-    shake on forced hit and game over screen when game ends
+    shake on forced hit, new audio when a tetris (4 lines) is cleared, and game over
+    screen when game ends. Lowered background audio with respect to other sound volumes
 
 
-    0.0.1.0s2: Added
-    volume, resolution and full screen toggle to options screen, title screen and
-    splash screen before menu, background music and game sound effects for hard 
+    0.0.1.0s2:
+    Added volume, resolution and full screen toggle to options screen, title screen
+    and splash screen before menu, background music and game sound effects for hard 
     drop, soft drop, line clear, game over and game start.
 
 
