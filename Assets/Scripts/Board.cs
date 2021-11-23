@@ -42,6 +42,7 @@ public class Board : MonoBehaviour
         //gameover = GameObject.Find("GameOver");
         //game = GameObject.Find("Game");
         //gameboard = GameObject.Find("Board");
+        //FindObjectOfType<AudioManager>().sounds[0].volume = (.25f * FindObjectOfType<AudioManager>().sounds[0].volume);
 
     }
 
@@ -82,7 +83,12 @@ public class Board : MonoBehaviour
         {
             highScore = linesCleared;
         }
+        //FindObjectOfType<AudioManager>().sounds[3].volume = 1f;
         FindObjectOfType<AudioManager>().Play("gameover");
+        //GetComponent<AudioSource>().volume = 1.5f;
+        linesCleared = 0;
+        this.tilemap.ClearAllTiles();
+        //SceneManager.LoadScene("GameOver");
 
 
         //SceneManager.LoadScene("GameOver");

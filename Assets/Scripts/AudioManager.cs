@@ -24,10 +24,15 @@ public class AudioManager : MonoBehaviour{
 
     public void setVolume(float volume)
     {
-        foreach (Sound s in sounds)
+        float lowvol = .5f * volume;
+        for (int i = 0; i < sounds.Length; i++)
         {
-
-            s.source.volume = volume;
+            if (i == 0) {
+                sounds[i].source.volume = lowvol;
+            }
+            else {
+                sounds[i].source.volume = volume;
+            }
         }
         AudioManager.volume = volume;
         Debug.Log(AudioManager.volume);
