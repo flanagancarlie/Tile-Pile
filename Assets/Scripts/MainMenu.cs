@@ -3,13 +3,26 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Audio;
+using UnityEngine.UI; 
 
 public class MainMenu : MonoBehaviour
 {
 
-    public AudioMixer audioMixer;
+    public AudioManager audioManager;
+    public float volume;
+    public Slider volumeSlider;
 
-        public void PlayGame()
+
+    public void Initialize(AudioManager audioManager, Slider volumeSlider)
+    {
+
+        this.audioManager = audioManager;
+        this.volumeSlider = volumeSlider;
+        this.SetVolume(volume);
+        this.volumeSlider.value = volume;
+    }
+
+    public void PlayGame()
     {
         SceneManager.LoadScene("Tetris");
     }
@@ -28,14 +41,16 @@ public class MainMenu : MonoBehaviour
     public void SetVolume (float volume)
     {
         Debug.Log(volume);
-        audioMixer.SetFloat("volume", volume);
+        audioManager.setVolume(volume);
+        this.volume = volume;
+        volume = this.volumeSlider.value;
+
     }
 
 
-    public void SetFullscreen (bool isFullscreen)
-    {
-        Screen.fullScreen = isFullscreen;
-    }
+
+
+
 
 
 }

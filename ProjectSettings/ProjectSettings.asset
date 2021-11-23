@@ -16,7 +16,7 @@ PlayerSettings:
   productName: Untitled Tetris Game
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
-  m_SplashScreenBackgroundColor: {r: 0, g: 0.02693558, b: 0.3679245, a: 1}
+  m_SplashScreenBackgroundColor: {r: 0, g: 0.015455652, b: 0.20754719, a: 1}
   m_ShowUnitySplashScreen: 1
   m_ShowUnitySplashLogo: 1
   m_SplashScreenOverlayOpacity: 1
@@ -40,9 +40,9 @@ PlayerSettings:
     width: 1
     height: 1
   m_SplashScreenLogos:
-  - logo: {fileID: 21300000, guid: 5080acabb47a29248961cc384412b3af, type: 3}
-    duration: 2
-  - logo: {fileID: 21300000, guid: e7db5473243e07d42ac628c3b1989b47, type: 3}
+  - logo: {fileID: 21300000, guid: 771926d36036db14aafe24d45a520318, type: 3}
+    duration: 5
+  - logo: {fileID: 21300000, guid: 42525b7e7961c394cbade35d76d11dad, type: 3}
     duration: 2
   - logo: {fileID: 10404, guid: 0000000000000000e000000000000000, type: 0}
     duration: 2
@@ -541,7 +541,7 @@ PlayerSettings:
   ps4IncludedModules: []
   ps4attribVROutputEnabled: 0
   monoEnv: 
-  splashScreenBackgroundSourceLandscape: {fileID: 0}
+  splashScreenBackgroundSourceLandscape: {fileID: 21300000, guid: 8c7b288b110411b42adc797e508d0e7b, type: 3}
   splashScreenBackgroundSourcePortrait: {fileID: 0}
   blurSplashScreenBackground: 1
   spritePackerPolicy: 
