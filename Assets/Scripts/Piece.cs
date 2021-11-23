@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class Piece : MonoBehaviour
@@ -13,6 +14,8 @@ public class Piece : MonoBehaviour
 
     private float stepTime;
     private float lockTime;
+
+
     public void Initialize(Board board, Vector3Int position, TetrominoData data)
     {
         this.board = board;
@@ -47,7 +50,8 @@ public class Piece : MonoBehaviour
         {
             Rotate(1);
         }
-
+        
+        
         //Handle left/right movement
         if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow))
         {
@@ -72,7 +76,6 @@ public class Piece : MonoBehaviour
         {
             Step();
         }
-
         this.board.Set(this);
     }
 
@@ -209,5 +212,7 @@ public class Piece : MonoBehaviour
             return min + (input - min) % (max - min);
         }
     }
+
+
 
 }

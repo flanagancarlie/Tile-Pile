@@ -7,7 +7,9 @@ public class Board : MonoBehaviour
 {
     public Tilemap tilemap { get; private set; }
     public Piece activePiece { get; private set; }
+    public Piece heldPiece { get; private set; }
     public TetrominoData[] tetrominos;
+    public Piece[] queue;
     public Vector3Int spawnPosition = new Vector3Int(-1, 8, 0);
     public Vector2Int boardSize = new Vector2Int(10, 20);
 
@@ -52,12 +54,31 @@ public class Board : MonoBehaviour
         gameboard.SetActive(true);
         this.linesCleared = 0;
         this.highScore = 0;
+        //setQueue();
         SpawnPiece();
+
+    }
+
+    private void setQueue()
+    {
+        // gets 3 random tetrominoes and sets it to the queue before showing each in the queue on board
+       for(int i = 0; i < this.queue.Length; i++) 
+        {
+            int random = Random.Range(0, this.tetrominos.Length);
+            TetrominoData data = this.tetrominos[random];
+
+            
+            //print(queue[i].tetromino);
+        }
 
     }
 
     public void SpawnPiece()
     {
+        // maybe generalize this and have it take in a piece so we don't have to create a spawn queue function
+        // oh wait maybe it just always takes the first piece from the queue
+        // this could work it's just that we would have to uh yeah ill figure it out <3
+
         int random = Random.Range(0, this.tetrominos.Length);
         TetrominoData data = this.tetrominos[random];
 
@@ -73,16 +94,41 @@ public class Board : MonoBehaviour
             GameOver();
         }
 
+    }
 
+
+    public void spawnNextInQueue()
+    {
+        //this.activePiece.Initialize();
+        if(IsValidPosition(this.activePiece, this.spawnPosition))
+        {
+            Set(this.activePiece);
+
+        }
+        else
+        {
+            GameOver();
+        }
+
+    }
+
+    private void addtoQueue()
+    {
+        // add random piece to the end of the queue
+        int random = Random.Range(0, this.tetrominos.Length);
+        TetrominoData data = this.tetrominos[random];
+        //queue[this.queue.Length - 1] = piece; or something like that lol
     }
 
     private void GameOver()
     {
+        //SceneManager.LoadScene("GameOver");
         if (linesCleared >= highScore)
         {
             highScore = linesCleared;
         }
         FindObjectOfType<AudioManager>().Play("gameover");
+<<<<<<< Updated upstream
 
 
         //SceneManager.LoadScene("GameOver");
@@ -92,6 +138,11 @@ public class Board : MonoBehaviour
         linesCleared = 0;
 
 
+=======
+        linesCleared = 0;
+        this.tilemap.ClearAllTiles();
+        SceneManager.LoadScene("GameOver");
+>>>>>>> Stashed changes
     }
 
 
@@ -222,6 +273,7 @@ public class Board : MonoBehaviour
         SceneManager.LoadScene("Menu");
     }
 
+<<<<<<< Updated upstream
     public void PlayAgain()
     {
         this.tilemap.ClearAllTiles();
@@ -229,4 +281,20 @@ public class Board : MonoBehaviour
         game.SetActive(true);
         gameboard.SetActive(true);
     }
+=======
+    public void Hold()
+    {
+        // if heldpiece is null/empty
+        // set held piece to active piece
+        // active piece is set to next in queue
+
+        // if held piece is not null/empty
+        // swap held piece and active piece
+    }
+
+    public int getLinesCleared() { return linesCleared;}
+
+    public int getHighScore() { return highScore; }
+
+>>>>>>> Stashed changes
 }
