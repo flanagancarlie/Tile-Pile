@@ -15,7 +15,9 @@ public class Board : MonoBehaviour
     public int highScore;
     public TextMeshProUGUI cleared;
     public TextMeshProUGUI score;
-
+    public GameObject gameover;
+    public GameObject game;
+    public GameObject gameboard;
 
     public RectInt Bounds
     {
@@ -37,10 +39,17 @@ public class Board : MonoBehaviour
         {
             this.tetrominos[i].Initialize();
         }
+        //gameover = GameObject.Find("GameOver");
+        //game = GameObject.Find("Game");
+        //gameboard = GameObject.Find("Board");
+
     }
 
     private void Start()
     {
+        gameover.SetActive(false);
+        game.SetActive(true);
+        gameboard.SetActive(true);
         this.linesCleared = 0;
         this.highScore = 0;
         SpawnPiece();
@@ -74,11 +83,13 @@ public class Board : MonoBehaviour
             highScore = linesCleared;
         }
         FindObjectOfType<AudioManager>().Play("gameover");
+
+
+        //SceneManager.LoadScene("GameOver");
+        gameover.SetActive(true);
+        game.SetActive(false);
+        gameboard.SetActive(false);
         linesCleared = 0;
-        this.tilemap.ClearAllTiles();
-        SceneManager.LoadScene("GameOver");
-
-
 
 
     }
@@ -209,5 +220,13 @@ public class Board : MonoBehaviour
     public void Quit()
     {
         SceneManager.LoadScene("Menu");
+    }
+
+    public void PlayAgain()
+    {
+        this.tilemap.ClearAllTiles();
+        gameover.SetActive(false);
+        game.SetActive(true);
+        gameboard.SetActive(true);
     }
 }
