@@ -15,6 +15,8 @@ public class OptionsMenu : MonoBehaviour
 
     Resolution[] resolutions;
 
+    public static bool isEasy = true;
+
     public void Start()
     {
 
@@ -58,6 +60,11 @@ public class OptionsMenu : MonoBehaviour
     {
         Resolution resolution = resolutions[resolutionIndex];
         Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen);
+    }
+
+    public void SetDifficulty(bool isEasyTrue)
+    {
+        OptionsMenu.isEasy = isEasyTrue;   
     }
 
 

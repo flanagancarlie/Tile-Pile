@@ -8,8 +8,34 @@ public class Board : MonoBehaviour
     public Tilemap tilemap { get; private set; }
     public Piece activePiece { get; private set; }
     public TetrominoData[] tetrominos;
-    public Vector3Int spawnPosition = new Vector3Int(-1, 8, 0);
-    public Vector2Int boardSize = new Vector2Int(10, 20);
+    public Vector3Int spawnPosition
+    {
+        get
+        {
+            if (OptionsMenu.isEasy)
+            {
+                return new Vector3Int(-1, 8, 0);
+            }
+            else
+            {
+                return new Vector3Int(-1, 4, 0);
+            }
+        }
+    }
+    public Vector2Int boardSize {
+        get
+        {
+            if (OptionsMenu.isEasy)
+            {
+                return new Vector2Int(10, 20);
+            }
+            else
+            {
+                return new Vector2Int(10, 16);
+            }
+        }
+    }
+
 
     public int linesCleared;
     public int highScore;
@@ -18,6 +44,10 @@ public class Board : MonoBehaviour
     public GameObject gameover;
     public GameObject game;
     public GameObject gameboard;
+    public GameObject gridEasy;
+    public GameObject gridHard;
+    public GameObject borderEasy;
+    public GameObject borderHard;
 
     public RectInt Bounds
     {
@@ -48,13 +78,28 @@ public class Board : MonoBehaviour
 
     private void Start()
     {
+
         gameover.SetActive(false);
         game.SetActive(true);
         gameboard.SetActive(true);
         this.linesCleared = 0;
         this.highScore = 0;
         SpawnPiece();
+        if (OptionsMenu.isEasy)
+        {
+            gridEasy.SetActive(true);
+            borderEasy.SetActive(true);
+            gridHard.SetActive(false);
+            borderHard.SetActive(false);
+        }
+        else
+        {
+            gridEasy.SetActive(false);
+            borderEasy.SetActive(false);
+            gridHard.SetActive(true);
+            borderHard.SetActive(true);
 
+        }
     }
 
     public void SpawnPiece()

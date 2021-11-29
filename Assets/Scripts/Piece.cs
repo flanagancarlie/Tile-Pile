@@ -8,7 +8,20 @@ public class Piece : MonoBehaviour
     public Vector3Int position { get; private set; }
     public int rotationIndex { get; private set; }
 
-    public float stepDelay = 1f;
+    public float stepDelay
+    {
+        get
+        {
+            if (OptionsMenu.isEasy)
+            {
+                return 1f;
+            }
+            else
+            {
+                return .5f;
+            }
+        }
+    }
     public float lockDelay = 0.5f;
 
     private float stepTime;
