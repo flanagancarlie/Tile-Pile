@@ -291,6 +291,7 @@ public class Board : MonoBehaviour
 
     public void Quit()
     {
+        Time.timeScale = 1;
         SceneManager.LoadScene("Menu");
     }
 
@@ -305,4 +306,19 @@ public class Board : MonoBehaviour
         game.SetActive(true);
         gameboard.SetActive(true);
     }
+
+    public void Pause(bool isPaused)
+    {
+        if (isPaused)
+        {
+            Time.timeScale = 0;
+        }
+        else
+        {
+            Time.timeScale = 1;
+
+        }
+    }
+
+
 }

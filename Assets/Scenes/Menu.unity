@@ -5264,49 +5264,18 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Current Version: 0.0.1.0s4
-
-
-    Controls:
-
-    Left - Left arrow/A
-
-    Right:
-    Right arrow/D
-
-    Down: Down arrow/S
-
-    Hard drop: Space
-
-    Rotate clockwise:
-    E
-
-    Rotate counterclockwise: Q
-
-
-    Change Log
-
-
-    0.0.1.0s4: Added hard
-    mode with smaller grid and faster drop speed. Game over screen now displays board
-    and previous game score, and background music stops after gameover.
-
-
-    0.0.1.0s3:
-    Added screen shake on forced hitand game over screen when game ends. Lowered
-    background audio with respect to other sound volumes
-
-
-    0.0.1.0s2: Added volume,
-    resolution and full screen toggle to options screen, title screen and splash
-    screen before menu, background music and game sound effects for hard  drop, soft
-    drop, line clear, game over and game start.
-
-
-    0.0.1.0s1: Added background,
-    main menu screen, credits screen, version notes screen, exit button, in-game
-    quit button, cleared line count, high score sount that persists until game is
-    quit'
+  m_text: "Current Version: 0.0.1.0s4\n\nControls:\nLeft - Left arrow/A\nRight: Right
+    arrow/D\nDown: Down arrow/S\nHard drop: Space\nRotate clockwise: E\nRotate counterclockwise:
+    Q\n\nChange Log\n\n0.0.1.0s4: Added hard mode with smaller grid and faster drop
+    speed. Game over screen now displays board and previous game score, and background
+    music stops after gameover. Added pause/play fuctionality. \n\n0.0.1.0s3: Added
+    screen shake on forced hitand game over screen when game ends. Lowered background
+    audio with respect to other sound volumes\n\n0.0.1.0s2: Added volume, resolution
+    and full screen toggle to options screen, title screen and splash screen before
+    menu, background music and game sound effects for hard  drop, soft drop, line
+    clear, game over and game start.\n\n0.0.1.0s1: Added background, main menu screen,
+    credits screen, version notes screen, exit button, in-game quit button, cleared
+    line count, high score sount that persists until game is quit"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
