@@ -25,6 +25,7 @@ public class GameOver : MonoBehaviour
 
     public void PlayOriginal()
     {
+        Time.timeScale = 1;
         SceneManager.LoadScene("TetrisOriginal");
     }
 

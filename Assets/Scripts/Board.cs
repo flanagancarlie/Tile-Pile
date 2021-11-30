@@ -18,7 +18,7 @@ public class Board : MonoBehaviour
             }
             else
             {
-                return new Vector3Int(-1, 4, 0);
+                return new Vector3Int(-1, 6, 0);
             }
         }
     }
@@ -39,6 +39,8 @@ public class Board : MonoBehaviour
 
     public int linesCleared;
     public int highScore;
+
+
     public TextMeshProUGUI cleared;
     public TextMeshProUGUI score;
     public GameObject gameover;
@@ -48,6 +50,9 @@ public class Board : MonoBehaviour
     public GameObject gridHard;
     public GameObject borderEasy;
     public GameObject borderHard;
+
+    public GameObject currentScoreObject;
+    public GameObject highScoreObject;
 
     public RectInt Bounds
     {
@@ -73,33 +78,34 @@ public class Board : MonoBehaviour
         //game = GameObject.Find("Game");
         //gameboard = GameObject.Find("Board");
         //FindObjectOfType<AudioManager>().sounds[0].volume = (.25f * FindObjectOfType<AudioManager>().sounds[0].volume);
-
+        this.linesCleared = 0;
     }
 
     private void Start()
     {
 
-        gameover.SetActive(false);
-        game.SetActive(true);
-        gameboard.SetActive(true);
-        this.linesCleared = 0;
-        this.highScore = 0;
-        SpawnPiece();
-        if (OptionsMenu.isEasy)
-        {
-            gridEasy.SetActive(true);
-            borderEasy.SetActive(true);
-            gridHard.SetActive(false);
-            borderHard.SetActive(false);
-        }
-        else
-        {
-            gridEasy.SetActive(false);
-            borderEasy.SetActive(false);
-            gridHard.SetActive(true);
-            borderHard.SetActive(true);
+            gameover.SetActive(false);
+            game.SetActive(true);
+            gameboard.SetActive(true);
+            this.linesCleared = 0;
+            this.highScore = 0;
+            SpawnPiece();
+            if (OptionsMenu.isEasy)
+            {
+                gridEasy.SetActive(true);
+                borderEasy.SetActive(true);
+                gridHard.SetActive(false);
+                borderHard.SetActive(false);
+            }
+            else
+            {
+                gridEasy.SetActive(false);
+                borderEasy.SetActive(false);
+                gridHard.SetActive(true);
+                borderHard.SetActive(true);
 
-        }
+            }
+      
     }
 
     public void SpawnPiece()
@@ -124,30 +130,37 @@ public class Board : MonoBehaviour
 
     private void GameOver()
     {
+        Time.timeScale = 0;
         if (linesCleared >= highScore)
         {
             highScore = linesCleared;
         }
         //FindObjectOfType<AudioManager>().sounds[3].volume = 1f;
+        FindObjectOfType<AudioManager>().Pause("BackgroundMusic");
         FindObjectOfType<AudioManager>().Play("gameover");
         //GetComponent<AudioSource>().volume = 1.5f;
-        linesCleared = 0;
-        this.tilemap.ClearAllTiles();
-        //SceneManager.LoadScene("GameOver");
 
+        //this.tilemap.ClearAllTiles();
 
         //SceneManager.LoadScene("GameOver");
+
+        //        gridEasy.SetActive(false);
+        //        borderEasy.SetActive(false);
+        //        gridHard.SetActive(false);
+        //        borderHard.SetActive(false);
+        //SceneManager.LoadScene("GameOver");
+        //game.SetActive(false);
+        //gameboard.SetActive(false);
         gameover.SetActive(true);
-        game.SetActive(false);
-        gameboard.SetActive(false);
-        linesCleared = 0;
+
+
 
 
     }
 
 
     private void Update()
-    {
+    {   
         this.cleared.text = "Lines Cleared: " + linesCleared.ToString();
         this.score.text = "High Score: " + highScore.ToString();
         CheckForQuit();
@@ -283,6 +296,10 @@ public class Board : MonoBehaviour
 
     public void PlayAgain()
     {
+        FindObjectOfType<AudioManager>().Play("BackgroundMusic");
+        this.linesCleared = 0;
+
+        Time.timeScale = 1;
         this.tilemap.ClearAllTiles();
         gameover.SetActive(false);
         game.SetActive(true);
