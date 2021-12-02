@@ -41,6 +41,8 @@ public class Board : MonoBehaviour
     public int highScore;
 
 
+
+
     public TextMeshProUGUI cleared;
     public TextMeshProUGUI score;
     public GameObject gameover;
