@@ -8,41 +8,24 @@ public class Piece : MonoBehaviour
     public Vector3Int position { get; private set; }
     public int rotationIndex { get; private set; }
 
-    public float stepDelay
-    {
-        get
-        {
-            if (OptionsMenu.isEasy)
-            {
-                return 1f;
-            }
-            else
-            {
-                return .5f;
-            }
-        }
-
-        set 
-        { 
-            if (stepDelay <= 0) { stepDelay = 0.01f;}
-            else { stepDelay = value; }
-        }
-    }
+    public static float stepDelay { get; set; }
+    
     public float lockDelay = 0.5f;
 
     private float stepTime;
     private float lockTime;
 
     public int linesToLevelUp = 5;
-    private int linesProgress;
+    public static int linesProgress;
 
     public void Initialize(Board board, Vector3Int position, TetrominoData data)
     {
         this.board = board;
         this.position = position;
         this.data = data;
+        Piece.stepDelay = stepDelay;
         this.rotationIndex = 0;
-        this.stepTime = Time.time + this.stepDelay;
+        this.stepTime = Time.time + Piece.stepDelay;
         this.lockTime = 0f;
 
         if (this.cells == null)
@@ -54,6 +37,8 @@ public class Piece : MonoBehaviour
         {
             this.cells[i] = (Vector3Int)data.cells[i];
         }
+
+   
     }
 
     private void Update()
@@ -96,25 +81,13 @@ public class Piece : MonoBehaviour
             Step();
         }
 
-        if (this.linesProgress >= this.linesToLevelUp)
-        {
-            Debug.Log("Speed Increased");
-            this.linesProgress = 0;
-            if (OptionsMenu.isEasy)
-            {
-                this.stepDelay -= 0.5f;
-            }
-            else
-            {
-                this.stepDelay -= 0.02f;
-            }
-        }
+    
         this.board.Set(this);
     }
 
     private void Step()
     {
-        this.stepTime = Time.time + this.stepDelay;
+        this.stepTime = Time.time + Piece.stepDelay;
 
         Move(Vector2Int.down);
 
@@ -127,8 +100,26 @@ public class Piece : MonoBehaviour
 
     private void Lock()
     {
+
         this.board.Set(this);
-        this.linesProgress += this.board.ClearLines();
+        this.board.ClearLines();
+        if (Piece.linesProgress >= this.linesToLevelUp && Piece.stepDelay > 0.05f)
+        {
+            Debug.Log("Speed Increased");
+            //           if (OptionsMenu.isEasy)
+            //           {
+            Piece.stepDelay -= 0.05f;
+            Debug.Log(Piece.stepDelay);
+            //            }
+            //            else
+            //            {
+            //                Piece.stepDelay -= 0.05f;
+            //               Debug.Log(Piece.stepDelay);
+            //
+            //            }
+            Piece.linesProgress = 0;
+
+        }
         this.board.SpawnPiece();
     }
 

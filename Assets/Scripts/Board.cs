@@ -96,16 +96,19 @@ public class Board : MonoBehaviour
                 borderEasy.SetActive(true);
                 gridHard.SetActive(false);
                 borderHard.SetActive(false);
+                Piece.stepDelay = 1f;
             }
+   
             else
             {
                 gridEasy.SetActive(false);
                 borderEasy.SetActive(false);
                 gridHard.SetActive(true);
                 borderHard.SetActive(true);
+                Piece.stepDelay = .5f;
 
-            }
-      
+        }
+
     }
 
     public void SpawnPiece()
@@ -134,6 +137,16 @@ public class Board : MonoBehaviour
         if (linesCleared >= highScore)
         {
             highScore = linesCleared;
+        }
+        if (OptionsMenu.isEasy)
+        {
+            Piece.stepDelay = 1f;
+        }
+
+        else
+        {
+            Piece.stepDelay = .5f;
+
         }
         //FindObjectOfType<AudioManager>().sounds[3].volume = 1f;
         FindObjectOfType<AudioManager>().Pause("BackgroundMusic");
@@ -235,6 +248,7 @@ public class Board : MonoBehaviour
                 row++;
             }
         }
+        Piece.linesProgress += lines;
         return lines;
     }
 
