@@ -21,11 +21,21 @@ public class Piece : MonoBehaviour
                 return .5f;
             }
         }
+
+        set 
+        { 
+            if (stepDelay <= 0) { stepDelay = 0.01f;}
+            else { stepDelay = value; }
+        }
     }
     public float lockDelay = 0.5f;
 
     private float stepTime;
     private float lockTime;
+
+    public int linesToLevelUp = 5;
+    private int linesProgress;
+
     public void Initialize(Board board, Vector3Int position, TetrominoData data)
     {
         this.board = board;
@@ -86,6 +96,19 @@ public class Piece : MonoBehaviour
             Step();
         }
 
+        if (this.linesProgress >= this.linesToLevelUp)
+        {
+            Debug.Log("Speed Increased");
+            this.linesProgress = 0;
+            if (OptionsMenu.isEasy)
+            {
+                this.stepDelay -= 0.5f;
+            }
+            else
+            {
+                this.stepDelay -= 0.02f;
+            }
+        }
         this.board.Set(this);
     }
 
@@ -105,7 +128,7 @@ public class Piece : MonoBehaviour
     private void Lock()
     {
         this.board.Set(this);
-        this.board.ClearLines();
+        this.linesProgress += this.board.ClearLines();
         this.board.SpawnPiece();
     }
 
