@@ -117,7 +117,7 @@ public class Piece : MonoBehaviour
             //               Debug.Log(Piece.stepDelay);
             //
             //            }
-            Piece.linesProgress = 0;
+            Piece.linesProgress -= 5;
 
         }
         this.board.SpawnPiece();

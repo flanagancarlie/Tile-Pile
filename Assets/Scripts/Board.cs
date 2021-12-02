@@ -142,12 +142,13 @@ public class Board : MonoBehaviour
         {
             Piece.stepDelay = 1f;
         }
-
         else
         {
             Piece.stepDelay = .5f;
 
         }
+        Piece.linesProgress = 0;
+
         //FindObjectOfType<AudioManager>().sounds[3].volume = 1f;
         FindObjectOfType<AudioManager>().Pause("BackgroundMusic");
         FindObjectOfType<AudioManager>().Play("gameover");
