@@ -110,6 +110,7 @@ public class Piece : MonoBehaviour
             //           {
             Piece.stepDelay -= 0.05f;
             Debug.Log(Piece.stepDelay);
+            this.board.IncreaseLevel();
             //            }
             //            else
             //            {
@@ -118,7 +119,7 @@ public class Piece : MonoBehaviour
             //
             //            }
             Piece.linesProgress -= 5;
-
+            
         }
         this.board.SpawnPiece();
     }

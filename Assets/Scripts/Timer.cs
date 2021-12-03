@@ -8,12 +8,13 @@ public class Timer : MonoBehaviour {
     public bool timerIsRunning = false;
     public Text timeText;
 
-    private void Start() {
+    public void Start() {
         // Starts the timer automatically
         timerIsRunning = true;
+        timePassed = 0;
     }
 
-    void Update() {
+    public void Update() {
         if(timerIsRunning) {
             if(timePassed >= 0) {
                 timePassed += Time.deltaTime;
@@ -27,13 +28,18 @@ public class Timer : MonoBehaviour {
         }
     }
 
-    void DisplayTime(float timeToDisplay) {
+    public void DisplayTime(float timeToDisplay) {
         timeToDisplay += 1;
 
         float minutes = Mathf.FloorToInt(timeToDisplay / 60);
         float seconds = Mathf.FloorToInt(timeToDisplay % 60);
 
         timeText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
+    }
+
+    public void GameOver()
+    {
+        timerIsRunning = false;
     }
 }
 

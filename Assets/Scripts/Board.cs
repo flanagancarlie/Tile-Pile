@@ -39,12 +39,11 @@ public class Board : MonoBehaviour
 
     public int linesCleared;
     public int highScore;
-
-
-
+    public int level;
 
     public TextMeshProUGUI cleared;
     public TextMeshProUGUI score;
+    public TextMeshProUGUI currentLevel;
     public GameObject gameover;
     public GameObject game;
     public GameObject gameboard;
@@ -55,6 +54,8 @@ public class Board : MonoBehaviour
 
     public GameObject currentScoreObject;
     public GameObject highScoreObject;
+
+    public Timer timer;
 
     public RectInt Bounds
     {
@@ -91,6 +92,8 @@ public class Board : MonoBehaviour
             gameboard.SetActive(true);
             this.linesCleared = 0;
             this.highScore = 0;
+            this.level = 1;
+            timer.Start();
             SpawnPiece();
             if (OptionsMenu.isEasy)
             {
@@ -150,28 +153,13 @@ public class Board : MonoBehaviour
 
         }
         Piece.linesProgress = 0;
+        timer.GameOver();
+        
 
-        //FindObjectOfType<AudioManager>().sounds[3].volume = 1f;
         FindObjectOfType<AudioManager>().Pause("BackgroundMusic");
         FindObjectOfType<AudioManager>().Play("gameover");
-        //GetComponent<AudioSource>().volume = 1.5f;
 
-        //this.tilemap.ClearAllTiles();
-
-        //SceneManager.LoadScene("GameOver");
-
-        //        gridEasy.SetActive(false);
-        //        borderEasy.SetActive(false);
-        //        gridHard.SetActive(false);
-        //        borderHard.SetActive(false);
-        //SceneManager.LoadScene("GameOver");
-        //game.SetActive(false);
-        //gameboard.SetActive(false);
         gameover.SetActive(true);
-
-
-
-
     }
 
 
@@ -179,6 +167,7 @@ public class Board : MonoBehaviour
     {   
         this.cleared.text = "Lines Cleared: " + linesCleared.ToString();
         this.score.text = "High Score: " + highScore.ToString();
+        this.currentLevel.text = "Current Level: " + level.ToString();
         CheckForQuit();
     }
 
@@ -322,6 +311,7 @@ public class Board : MonoBehaviour
         gameover.SetActive(false);
         game.SetActive(true);
         gameboard.SetActive(true);
+        timer.Start();
     }
 
     public void Pause(bool isPaused)
@@ -329,13 +319,20 @@ public class Board : MonoBehaviour
         if (isPaused)
         {
             Time.timeScale = 0;
+            FindObjectOfType<AudioManager>().Pause("BackgroundMusic");
+            FindObjectOfType<AudioManager>().Play("pause");
         }
         else
         {
             Time.timeScale = 1;
+            FindObjectOfType<AudioManager>().Play("BackgroundMusic");
 
         }
     }
 
+    public void IncreaseLevel()
+    {
+        this.level++;
+    }
 
 }
