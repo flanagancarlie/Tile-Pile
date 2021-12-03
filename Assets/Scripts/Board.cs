@@ -307,6 +307,7 @@ public class Board : MonoBehaviour
         this.linesCleared = 0;
 
         Time.timeScale = 1;
+        this.level = 1;
         this.tilemap.ClearAllTiles();
         gameover.SetActive(false);
         game.SetActive(true);
