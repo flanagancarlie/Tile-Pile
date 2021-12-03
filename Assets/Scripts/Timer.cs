@@ -37,4 +37,3 @@ public class Timer : MonoBehaviour {
     }
 }
 
-// source: https://gamedevbeginner.com/how-to-make-countdown-timer-in-unity-minutes-seconds/#convert_to_text // 
