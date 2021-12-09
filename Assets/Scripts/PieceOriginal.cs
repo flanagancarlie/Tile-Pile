@@ -38,42 +38,44 @@ public class PieceOriginal : MonoBehaviour
         this.board.Clear(this);
         this.lockTime += Time.deltaTime;
 
-        //Handle rotation
-        if (Input.GetKeyDown(KeyCode.Q))
         {
-            Rotate(-1);
-        }
-        else if (Input.GetKeyDown(KeyCode.E))
-        {
-            Rotate(1);
-        }
+            //Handle rotation
+            if (Input.GetKeyDown(KeyCode.Q))
+            {
+                Rotate(-1);
+            }
+            else if (Input.GetKeyDown(KeyCode.E))
+            {
+                Rotate(1);
+            }
 
-        //Handle left/right movement
-        if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow))
-        {
-            Move(Vector2Int.left);
-        }
-        else if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow))
-        {
-            Move(Vector2Int.right);
-        }
+            //Handle left/right movement
+            if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow))
+            {
+                Move(Vector2Int.left);
+            }
+            else if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow))
+            {
+                Move(Vector2Int.right);
+            }
 
-        //Handle down movement
-        if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow))
-        {
-            Move(Vector2Int.down);
-        }
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            HardDrop();
-        }
+            //Handle down movement
+            if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow))
+            {
+                Move(Vector2Int.down);
+            }
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                HardDrop();
+            }
 
-        if(Time.time >= this.stepTime)
-        {
-            Step();
-        }
+            if (Time.time >= this.stepTime)
+            {
+                Step();
+            }
 
-        this.board.Set(this);
+            this.board.Set(this);
+        }
     }
 
     private void Step()
