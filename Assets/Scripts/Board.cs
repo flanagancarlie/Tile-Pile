@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.Tilemaps;
 using UnityEngine.SceneManagement;
 using TMPro;
+using System.Collections;
 
 public class Board : MonoBehaviour
 {
@@ -44,6 +45,8 @@ public class Board : MonoBehaviour
     public TextMeshProUGUI cleared;
     public TextMeshProUGUI score;
     public TextMeshProUGUI currentLevel;
+
+    public GameObject levelUp;
     public GameObject gameover;
     public GameObject game;
     public GameObject gameboard;
@@ -86,10 +89,11 @@ public class Board : MonoBehaviour
 
     private void Start()
     {
-
+            
             gameover.SetActive(false);
             game.SetActive(true);
             gameboard.SetActive(true);
+            levelUp.SetActive(false);
             this.linesCleared = 0;
             this.highScore = 0;
             this.level = 1;
@@ -331,9 +335,15 @@ public class Board : MonoBehaviour
         }
     }
 
-    public void IncreaseLevel()
+    public IEnumerator IncreaseLevel()
     {
         this.level++;
+        Debug.Log(this.level);
+        levelUp.SetActive(true);
+
+        yield return new WaitForSeconds(1);
+        levelUp.SetActive(false);
+
     }
 
 }

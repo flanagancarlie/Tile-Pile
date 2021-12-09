@@ -110,7 +110,7 @@ public class Piece : MonoBehaviour
             //           {
             Piece.stepDelay -= 0.05f;
             Debug.Log(Piece.stepDelay);
-            this.board.IncreaseLevel();
+            StartCoroutine(this.board.IncreaseLevel());
             //            }
             //            else
             //            {
