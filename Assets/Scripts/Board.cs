@@ -54,11 +54,14 @@ public class Board : MonoBehaviour
     public GameObject gridHard;
     public GameObject borderEasy;
     public GameObject borderHard;
+    public GameObject playGame;
+    public GameObject pauseGame;
 
     public GameObject currentScoreObject;
     public GameObject highScoreObject;
 
     public Timer timer;
+    public bool isGamePause = false;
 
     public RectInt Bounds
     {
@@ -295,7 +298,18 @@ public class Board : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            Quit();
+            if (!isGamePause)
+            {
+                Pause(true);
+                playGame.SetActive(true);
+                pauseGame.SetActive(false);
+            }
+            else
+            {
+                Pause(false);
+                playGame.SetActive(false);
+                pauseGame.SetActive(true);
+            }
         }
     }
 
@@ -321,6 +335,7 @@ public class Board : MonoBehaviour
 
     public void Pause(bool isPaused)
     {
+        isGamePause = isPaused;
         if (isPaused)
         {
             Time.timeScale = 0;

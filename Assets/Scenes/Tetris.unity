@@ -3053,9 +3053,12 @@ MonoBehaviour:
   gridHard: {fileID: 1093131562}
   borderEasy: {fileID: 1492362658}
   borderHard: {fileID: 2105340395}
+  playGame: {fileID: 2117631409}
+  pauseGame: {fileID: 1204128120}
   currentScoreObject: {fileID: 0}
   highScoreObject: {fileID: 0}
   timer: {fileID: 1888096271}
+  isGamePause: 0
 --- !u!156049354 &1672081052
 Grid:
   m_ObjectHideFlags: 0

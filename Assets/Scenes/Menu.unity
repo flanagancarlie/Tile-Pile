@@ -5283,36 +5283,39 @@ MonoBehaviour:
 
     Rotate counterclockwise: Q
 
+    Pause/Play: Escape
+
 
     Change Log
 
 
-    0.0.1.0s5: Added text
-    pop-up when user levels up, current level displayed, running timer during gameplay,
-    audio on pause
+    0.0.1.0s5:
+    Added text pop-up when user levels up, current level displayed, running timer
+    during gameplay, audio on pause, pressing escape pauses/plays the game.
 
 
-    0.0.1.0s4: Added hard mode with smaller grid and faster
-    drop speed. Game over screen now displays board and previous game score, and
-    background music stops after gameover. Added pause/play fuctionality. Game named
-    to Tile Pile and title fonts changed. Drop speed now increases for every 5 lines
-    cleared.
+    0.0.1.0s4:
+    Added hard mode with smaller grid and faster drop speed. Game over screen now
+    displays board and previous game score, and background music stops after gameover.
+    Added pause/play fuctionality. Game named to Tile Pile and title fonts changed.
+    Drop speed now increases for every 5 lines cleared.
 
 
-    0.0.1.0s3: Added screen shake on forced hitand game over screen
-    when game ends. Lowered background audio with respect to other sound volumes.
-    Added separate audio for clearing 4 lines
+    0.0.1.0s3: Added screen
+    shake on forced hitand game over screen when game ends. Lowered background audio
+    with respect to other sound volumes. Added separate audio for clearing 4 lines
 
 
-    0.0.1.0s2: Added volume, resolution
-    and full screen toggle to options screen, title screen and splash screen before
-    menu, background music and game sound effects for hard  drop, soft drop, line
-    clear, game over and game start.
+    0.0.1.0s2:
+    Added volume, resolution and full screen toggle to options screen, title screen
+    and splash screen before menu, background music and game sound effects for hard 
+    drop, soft drop, line clear, game over and game start.
 
 
-    0.0.1.0s1: Added background, main menu
-    screen, credits screen, version notes screen, exit button, in-game quit button,
-    cleared line count, high score sount that persists until game is quit'
+    0.0.1.0s1: Added
+    background, main menu screen, credits screen, version notes screen, exit button,
+    in-game quit button, cleared line count, high score sount that persists until
+    game is quit'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
